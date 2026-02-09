@@ -49,7 +49,6 @@ El equipo de analítica aplica técnicas de aprendizaje no supervisado para desc
 Proyecto-Clustering-No-Supervisado/
 │── data/               # Dataset utilizado o link de referencia
 │── notebooks/          # Jupyter Notebooks con el desarrollo del proyecto
-│── src/                # Scripts auxiliares (si aplica)
 │── figures/            # Visualizaciones exportadas (PNG/PDF)
 │── README.md           # Documentación del proyecto
 │── requirements.txt    # Dependencias del entorno
