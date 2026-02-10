@@ -1,193 +1,134 @@
-# Segmentación de Usuarios con Aprendizaje No Supervisado
+# Segmentación de Usuarios con Aprendizaje No Supervisado  
+*K-means · DBSCAN · PCA · t-SNE*
 
-## 📌 Descripción General
+## 📌 Descripción del proyecto
 
-Este proyecto tiene como objetivo implementar y analizar **modelos de aprendizaje no supervisado** para segmentar usuarios de una plataforma digital de servicios personalizados. A partir de datos de navegación, transacciones y comportamiento, se buscan **perfiles representativos de usuarios** que permitan apoyar decisiones de marketing, personalización de servicios y estrategia de negocio.
+Este proyecto implementa y analiza modelos de **aprendizaje no supervisado** para segmentar perfiles de usuarios/clientes en un entorno tecnológico.  
+Se aplican técnicas de **clustering** y **reducción de dimensionalidad** con el objetivo de identificar patrones de comportamiento y generar **insights accionables para marketing y negocio**.
 
-Se aplican y comparan los siguientes métodos:
-
-* **K-means**
-* **DBSCAN**
-* **PCA (Principal Component Analysis)**
-* **t-SNE (t-distributed Stochastic Neighbor Embedding)**
-
-El enfoque combina análisis estadístico, visualización avanzada y reflexión crítica sobre los resultados obtenidos.
+El caso simula una **plataforma digital de servicios personalizados** que desea comprender mejor a sus usuarios a partir de datos de comportamiento y consumo.
 
 ---
 
-## 🎯 Objetivos del Proyecto
+## 🎯 Objetivos
 
-### Objetivo General
-
-Implementar y analizar modelos de clustering no supervisado para segmentar perfiles de usuario en un entorno tecnológico.
-
-### Objetivos Específicos
-
-* Explorar y preparar un dataset de comportamiento de usuarios.
-* Determinar el número óptimo de clusters mediante métricas adecuadas.
-* Comparar el desempeño y resultados de K-means y DBSCAN.
-* Utilizar PCA y t-SNE para visualización y reducción de dimensionalidad.
-* Interpretar y comunicar los perfiles identificados de forma técnica y visual.
+- Aplicar técnicas de clustering no supervisado (**K-means y DBSCAN**).
+- Determinar el número óptimo de clusters mediante **Elbow Method** y **Silhouette Score**.
+- Reducir dimensionalidad y visualizar patrones con **PCA** y **t-SNE**.
+- Comparar resultados entre modelos.
+- Interpretar los clusters y traducirlos en **perfiles de cliente** e **insights de marketing**.
+- Comunicar resultados de forma técnica y visual.
 
 ---
 
-## 🧠 Contexto del Caso
+## 📂 Dataset
 
-Una plataforma digital de servicios personalizados busca comprender mejor el comportamiento de sus usuarios con el fin de:
+**Origen:** Kaggle  
+**Dataset:** *Mall Customer Segmentation Data*
 
-* Personalizar campañas de marketing.
-* Mejorar la experiencia del usuario.
-* Incrementar la retención y el valor del cliente.
+El dataset contiene información anonimizada de clientes de un centro comercial, incluyendo:
 
-El equipo de analítica aplica técnicas de aprendizaje no supervisado para descubrir patrones ocultos y segmentar la base de usuarios sin etiquetas previas.
+- `Age`: Edad del cliente  
+- `Annual Income (k$)`: Ingreso anual  
+- `Spending Score (1–100)`: Puntaje de gasto  
 
----
-
-## 📂 Estructura del Repositorio
-
-```
-Proyecto-Clustering-No-Supervisado/
-│── data/               # Dataset utilizado o link de referencia
-│── notebooks/          # Jupyter Notebooks con el desarrollo del proyecto
-│── figures/            # Visualizaciones exportadas (PNG/PDF)
-│── README.md           # Documentación del proyecto
-│── requirements.txt    # Dependencias del entorno
-```
+📌 **Justificación del uso**  
+El dataset fue seleccionado por ser público, realista y adecuado para la aplicación de técnicas de aprendizaje no supervisado en segmentación de clientes.
 
 ---
 
-## ⚙️ Entorno de Trabajo
+## 🧪 Metodología
 
-* **Lenguaje:** Python 3.10+
-* **Herramientas:** Jupyter Notebook, VS Code, Git
-* **Librerías principales:**
+### 1️⃣ Preparación del entorno
+- Python 3.x
+- Librerías científicas y de visualización
+- Control de versiones con GitHub
 
-  * numpy
-  * pandas
-  * matplotlib
-  * seaborn
-  * scikit-learn
+### 2️⃣ Análisis exploratorio (EDA)
+- Estadísticos descriptivos
+- Distribución de variables
+- Análisis de correlaciones
+- Escalado de variables numéricas
 
-Para instalar las dependencias:
+### 3️⃣ Modelos implementados
 
-```bash
-pip install -r requirements.txt
-```
+#### 🔹 K-means
+- Selección del número óptimo de clusters con:
+  - Elbow Method
+  - Silhouette Score
+- Análisis de centroides
 
----
+#### 🔹 DBSCAN
+- Ajuste de hiperparámetros (`eps`, `min_samples`)
+- Identificación y exclusión de ruido (outliers)
 
-## 📊 Dataset
+#### 🔹 PCA
+- Reducción lineal de dimensionalidad
+- Visualización bidimensional de clusters
 
-* Dataset validado por el docente.
-* Contiene variables numéricas relacionadas con:
-
-  * Frecuencia de uso
-  * Tiempo de sesión
-  * Transacciones
-  * Monto promedio
-  * Interacciones con la plataforma
-
-**Nota:** Si el dataset no se incluye directamente en el repositorio, se proporciona el enlace de origen en la carpeta `/data`.
-
----
-
-## 🔍 Análisis Exploratorio de Datos (EDA)
-
-Se realizó:
-
-* Análisis estadístico descriptivo.
-* Visualización de distribuciones (histogramas, boxplots).
-* Análisis de correlación mediante heatmaps.
-* Limpieza de datos y eliminación de variables irrelevantes.
-* Escalado de variables para garantizar un desempeño adecuado de los modelos.
+#### 🔹 t-SNE
+- Visualización no lineal para detección de agrupamientos complejos
 
 ---
 
-## 🤖 Modelos Implementados
+## 📊 Visualización y exportación de resultados
 
-### K-means
+Todos los resultados generados por el notebook se **exportan automáticamente en la carpeta `figures/`**, incluyendo:
 
-* Aplicación de escalado previo.
-* Selección del número óptimo de clusters mediante:
+- Gráficos de Elbow Method y Silhouette Score
+- Visualizaciones 2D de PCA y t-SNE
+- Comparaciones gráficas entre K-means y DBSCAN
+- Tablas de perfiles promedio por cluster en formato **CSV**
+- Resultados de DBSCAN excluyendo observaciones consideradas como ruido
 
-  * Método del codo (Elbow Method).
-  * Silhouette Score.
-* Asignación de etiquetas y análisis de centroides.
-
-### DBSCAN
-
-* Ajuste de hiperparámetros `eps` y `min_samples`.
-* Identificación de ruido (outliers).
-* Comparación directa con K-means.
-
-### PCA
-
-* Reducción de dimensionalidad.
-* Análisis de varianza explicada.
-* Proyección de los datos a 2 dimensiones para visualización.
-
-### t-SNE
-
-* Reducción no lineal para detección de estructuras complejas.
-* Visualización de clusters latentes.
-* Comparación visual con PCA.
+Los archivos se generan utilizando `matplotlib.pyplot.savefig()` y `pandas.DataFrame.to_csv()`.
 
 ---
 
-## 📈 Visualización de Resultados
+## 📈 Resultados y análisis
 
-* Comparación gráfica entre clusters generados por K-means y DBSCAN.
-* Visualizaciones 2D utilizando PCA y t-SNE coloreadas por cluster.
-* Tabla resumen con estadísticas promedio por cluster.
-
-Las visualizaciones exportadas se encuentran en la carpeta `/figures`.
+- Identificación de perfiles diferenciados de clientes según edad, ingreso y nivel de gasto.
+- **K-means** generó clusters bien definidos y fácilmente interpretables.
+- **DBSCAN** permitió identificar clientes atípicos que no pertenecen a ningún grupo denso.
+- PCA y t-SNE facilitaron la interpretación visual de los patrones encontrados.
 
 ---
 
-## 🧩 Resultados y Análisis
+## 🧠 Insights de marketing
 
-* Se identificaron distintos perfiles de usuario con comportamientos diferenciados.
-* K-means mostró clusters más compactos y fáciles de interpretar.
-* DBSCAN permitió identificar ruido y usuarios atípicos.
-* PCA facilitó la interpretación global, mientras que t-SNE reveló estructuras más complejas.
+A partir de los clusters obtenidos se identificaron perfiles como:
+
+- Clientes de alto ingreso y alto gasto → estrategias premium y programas de fidelización.
+- Clientes jóvenes con gasto impulsivo → promociones personalizadas.
+- Clientes de bajo gasto → campañas de activación y retención.
+
+Estos perfiles permiten adaptar estrategias de marketing basadas en datos.
 
 ---
 
 ## ⚠️ Limitaciones
 
-* Sensibilidad de los modelos al escalado y a los hiperparámetros.
-* Interpretabilidad limitada en métodos no lineales como t-SNE.
-* Dependencia de la calidad y representatividad del dataset.
+- Sensibilidad de K-means al número de clusters.
+- Dependencia de DBSCAN en la elección de hiperparámetros.
+- Número limitado de variables.
+- Ausencia de datos temporales o categóricos.
+
+**Posibles mejoras:**
+- Incorporar más variables de comportamiento.
+- Evaluar otros algoritmos de clustering.
+- Integrar información temporal.
 
 ---
 
-## 🚀 Propuestas de Mejora
+## 📁 Estructura del repositorio
 
-* Aplicar clustering jerárquico.
-* Realizar ingeniería de características más avanzada.
-* Integrar validación con expertos de negocio.
-* Probar técnicas de clustering basadas en densidad adicionales.
-
----
-
-## 📦 Entregables
-
-* Repositorio colaborativo en GitHub/GitLab.
-* Código fuente (.ipynb / .py).
-* Dataset o enlace de referencia.
-* Documentación completa (README.md).
-* Visualizaciones exportadas.
-* Presentación técnica (5–10 minutos).
-
----
-
-## 📚 Recursos
-
-* Documentación oficial de Scikit-learn – Clustering
-* Guías de PCA y t-SNE
-
----
-
-## ✍️ Autores
-
-Proyecto desarrollado con fines académicos como parte del curso de **Machine Learning / Inteligencia Artificial**.
+```bash
+├── data/
+│   └── mall_customers.csv
+├── notebooks/
+│   └── clustering_kaggle.ipynb
+├── figures/
+│   ├── *.png
+│   └── *.csv
+├── requirements.txt
+└── README.md
