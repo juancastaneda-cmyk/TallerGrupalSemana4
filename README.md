@@ -1,134 +1,201 @@
-# Segmentación de Usuarios con Aprendizaje No Supervisado  
-*K-means · DBSCAN · PCA · t-SNE*
+📊 Segmentación de Clientes con Aprendizaje No Supervisado
+Dataset: Online Retail (Kaggle)
+📌 Descripción del Proyecto
 
-## 📌 Descripción del proyecto
+Este proyecto implementa técnicas de Aprendizaje Automático No Supervisado para segmentar clientes utilizando el dataset Online Retail de Kaggle.
 
-Este proyecto implementa y analiza modelos de **aprendizaje no supervisado** para segmentar perfiles de usuarios/clientes en un entorno tecnológico.  
-Se aplican técnicas de **clustering** y **reducción de dimensionalidad** con el objetivo de identificar patrones de comportamiento y generar **insights accionables para marketing y negocio**.
+El objetivo principal es identificar grupos de clientes con comportamientos de compra similares mediante técnicas de clustering, con el fin de apoyar estrategias de marketing, retención y análisis comercial.
 
-El caso simula una **plataforma digital de servicios personalizados** que desea comprender mejor a sus usuarios a partir de datos de comportamiento y consumo.
+Se aplican los siguientes modelos:
 
----
+✅ K-Means
 
-## 🎯 Objetivos
+✅ DBSCAN
 
-- Aplicar técnicas de clustering no supervisado (**K-means y DBSCAN**).
-- Determinar el número óptimo de clusters mediante **Elbow Method** y **Silhouette Score**.
-- Reducir dimensionalidad y visualizar patrones con **PCA** y **t-SNE**.
-- Comparar resultados entre modelos.
-- Interpretar los clusters y traducirlos en **perfiles de cliente** e **insights de marketing**.
-- Comunicar resultados de forma técnica y visual.
+✅ PCA (Reducción de dimensionalidad)
 
----
+✅ t-SNE (Visualización avanzada)
 
-## 📂 Dataset
+El análisis se basa en la metodología RFM (Recency, Frequency, Monetary).
 
-**Origen:** Kaggle  
-**Dataset:** *Mall Customer Segmentation Data*
+📂 Dataset Utilizado
 
-El dataset contiene información anonimizada de clientes de un centro comercial, incluyendo:
+Nombre: Online Retail Dataset
+Fuente: Kaggle
+Link oficial:
+https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
 
-- `Age`: Edad del cliente  
-- `Annual Income (k$)`: Ingreso anual  
-- `Spending Score (1–100)`: Puntaje de gasto  
+⚠ Nota Importante sobre el Dataset
 
-📌 **Justificación del uso**  
-El dataset fue seleccionado por ser público, realista y adecuado para la aplicación de técnicas de aprendizaje no supervisado en segmentación de clientes.
+El archivo original del dataset es relativamente pesado.
+Para poder subirlo al repositorio de GitHub sin superar los límites de tamaño, fue comprimido en formato:
 
----
+OnlineRetail.zip
 
-## 🧪 Metodología
 
-### 1️⃣ Preparación del entorno
-- Python 3.x
-- Librerías científicas y de visualización
-- Control de versiones con GitHub
+Por lo tanto:
 
-### 2️⃣ Análisis exploratorio (EDA)
-- Estadísticos descriptivos
-- Distribución de variables
-- Análisis de correlaciones
-- Escalado de variables numéricas
+Descargue el archivo .zip del repositorio.
 
-### 3️⃣ Modelos implementados
+Descomprímalo.
 
-#### 🔹 K-means
-- Selección del número óptimo de clusters con:
-  - Elbow Method
-  - Silhouette Score
-- Análisis de centroides
+Coloque el archivo OnlineRetail.csv en la carpeta raíz del proyecto antes de ejecutar el notebook.
 
-#### 🔹 DBSCAN
-- Ajuste de hiperparámetros (`eps`, `min_samples`)
-- Identificación y exclusión de ruido (outliers)
+🧠 Metodología Aplicada
+1️⃣ Limpieza de Datos
 
-#### 🔹 PCA
-- Reducción lineal de dimensionalidad
-- Visualización bidimensional de clusters
+Eliminación de registros sin CustomerID
 
-#### 🔹 t-SNE
-- Visualización no lineal para detección de agrupamientos complejos
+Eliminación de valores negativos en Quantity y UnitPrice
 
----
+Conversión de fecha (InvoiceDate) usando dayfirst=True
 
-## 📊 Visualización y exportación de resultados
+Creación de la variable TotalAmount
 
-Todos los resultados generados por el notebook se **exportan automáticamente en la carpeta `figures/`**, incluyendo:
+2️⃣ Ingeniería de Características – RFM
 
-- Gráficos de Elbow Method y Silhouette Score
-- Visualizaciones 2D de PCA y t-SNE
-- Comparaciones gráficas entre K-means y DBSCAN
-- Tablas de perfiles promedio por cluster en formato **CSV**
-- Resultados de DBSCAN excluyendo observaciones consideradas como ruido
+Se construyen las siguientes variables clave:
 
-Los archivos se generan utilizando `matplotlib.pyplot.savefig()` y `pandas.DataFrame.to_csv()`.
+Recency: Días desde la última compra
 
----
+Frequency: Número total de facturas por cliente
 
-## 📈 Resultados y análisis
+Monetary: Total gastado por cliente
 
-- Identificación de perfiles diferenciados de clientes según edad, ingreso y nivel de gasto.
-- **K-means** generó clusters bien definidos y fácilmente interpretables.
-- **DBSCAN** permitió identificar clientes atípicos que no pertenecen a ningún grupo denso.
-- PCA y t-SNE facilitaron la interpretación visual de los patrones encontrados.
+Estas métricas permiten evaluar el valor y comportamiento de los clientes.
 
----
+3️⃣ Análisis Exploratorio (EDA)
 
-## 🧠 Insights de marketing
+Se generan:
 
-A partir de los clusters obtenidos se identificaron perfiles como:
+Histogramas de distribución
 
-- Clientes de alto ingreso y alto gasto → estrategias premium y programas de fidelización.
-- Clientes jóvenes con gasto impulsivo → promociones personalizadas.
-- Clientes de bajo gasto → campañas de activación y retención.
+Matriz de correlación
 
-Estos perfiles permiten adaptar estrategias de marketing basadas en datos.
+Estadísticos descriptivos
 
----
+Todos los gráficos se almacenan automáticamente en la carpeta:
 
-## ⚠️ Limitaciones
+../figures
 
-- Sensibilidad de K-means al número de clusters.
-- Dependencia de DBSCAN en la elección de hiperparámetros.
-- Número limitado de variables.
-- Ausencia de datos temporales o categóricos.
+4️⃣ Preprocesamiento
 
-**Posibles mejoras:**
-- Incorporar más variables de comportamiento.
-- Evaluar otros algoritmos de clustering.
-- Integrar información temporal.
+Estandarización con StandardScaler
 
----
+Preparación de los datos para algoritmos de clustering
 
-## 📁 Estructura del repositorio
+5️⃣ Clustering
+🔹 K-Means
 
-```bash
-├── data/
-│   └── mall_customers.csv
+Selección del número óptimo de clusters mediante:
+
+Método del Codo
+
+Silhouette Score
+
+Segmentación final con k óptimo
+
+🔹 DBSCAN
+
+Identificación de clusters basados en densidad
+
+Detección de clientes atípicos (ruido)
+
+6️⃣ Reducción de Dimensionalidad
+
+Para visualización avanzada:
+
+PCA (2 componentes)
+
+t-SNE
+
+Permite representar los clusters en 2D.
+
+7️⃣ Perfilamiento de Clusters
+
+Se generan archivos CSV con el promedio de:
+
+Recency
+
+Frequency
+
+Monetary
+
+Esto permite interpretar cada segmento de clientes y facilitar la toma de decisiones estratégicas.
+
+📁 Estructura del Proyecto
+Proyecto
+│
+├── OnlineRetail.zip
 ├── notebooks/
-│   └── clustering_kaggle.ipynb
-├── figures/
-│   ├── *.png
-│   └── *.csv
-├── requirements.txt
-└── README.md
+│   └── segmentacion_clientes.ipynb
+│
+└── figures/
+    ├── distribucion_rfm.png
+    ├── matriz_correlacion_rfm.png
+    ├── elbow_kmeans.png
+    ├── silhouette_kmeans.png
+    ├── pca_kmeans.png
+    ├── pca_dbscan.png
+    ├── tsne_kmeans.png
+    ├── tsne_dbscan.png
+    ├── perfiles_cluster_kmeans.csv
+    └── perfiles_cluster_dbscan.csv
+
+🛠️ Requisitos Técnicos
+
+Python 3.9+
+
+Instalar dependencias:
+
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+▶️ Cómo Ejecutar el Proyecto
+
+Descargar el repositorio.
+
+Descomprimir OnlineRetail.zip.
+
+Colocar OnlineRetail.csv en la carpeta raíz.
+
+Asegurarse de que exista la carpeta ../figures.
+
+Ejecutar el notebook completo.
+
+📊 Resultados Esperados
+
+Segmentación clara de clientes.
+
+Identificación de clientes de alto valor.
+
+Detección de clientes inactivos.
+
+Identificación de clientes atípicos.
+
+Visualización clara de clusters en 2D.
+
+📈 Aplicaciones Empresariales
+
+El modelo puede utilizarse para:
+
+Estrategias de fidelización
+
+Campañas segmentadas de marketing
+
+Identificación de clientes VIP
+
+Detección de abandono
+
+Optimización de recursos comerciales
+
+🔍 Conclusiones
+
+K-Means genera segmentos claros y fácilmente interpretables.
+
+DBSCAN permite identificar comportamientos atípicos.
+
+PCA y t-SNE mejoran la visualización.
+
+La metodología RFM es altamente efectiva para análisis comercial.
+
+Este proyecto demuestra la aplicación práctica del Aprendizaje No Supervisado en un caso real de negocio.
