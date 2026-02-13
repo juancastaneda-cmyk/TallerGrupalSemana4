@@ -29,6 +29,8 @@ El análisis se basa en la metodología **RFM (Recency, Frequency, Monetary)**.
 - **Link oficial:**  
   https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset  
 
+**Online Retail** es un dataset de transacciones reales de una tienda en línea del Reino Unido, que contiene información sobre compras realizadas entre 2009 y 2011, incluyendo productos, cantidades, precios, clientes y países. Es ampliamente utilizado para análisis de comportamiento y segmentación de clientes.
+
 ---
 
 ## ⚠️ Nota Importante sobre el Dataset
