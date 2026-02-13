@@ -1,0 +1,26 @@
+1. ¿Qué tipo de perfiles se pueden identificar?
+Al cruzar las métricas de Recencia, Frecuencia y Valor Monetario (RFM) con los 4 clusters de K-means, se identifican claramente estos perfiles:
+•	Cluster 1: Los "Campeones" (VIP): Clientes con Recencia muy baja (compraron hace pocos días), Frecuencia muy alta y un valor Monetario sobresaliente. Son el núcleo del negocio.
+•	Cluster 2: Clientes de Alto Potencial / Leales: Compran con regularidad y gastan montos significativos, pero quizás no con la frecuencia de los campeones.
+•	Cluster 3: Clientes en Riesgo: Clientes que solían comprar mucho (M alto) y seguido (F alto), pero cuya Recencia es elevada. No han vuelto en mucho tiempo.
+•	Cluster 4: Clientes Esporádicos o Nuevos: Recencia baja (recientes) pero con Frecuencia y Monto muy bajos. Son compradores de una sola vez o que apenas están explorando la tienda.
+________________________________________
+2. ¿Qué diferencias clave surgieron entre los modelos?
+La comparación entre K-means y DBSCAN ofrece perspectivas muy distintas sobre la base de datos:
+•	K-means (4 Clusters): * Diferencia: Es un modelo de "partición". Obliga a cada cliente a pertenecer a uno de los 4 grupos.
+o	Resultado: Genera segmentos de mercado claros y accionables para campañas de marketing masivas. Es muy útil para ver la jerarquía de valor del cliente.
+•	DBSCAN: * Diferencia: Es un modelo de "densidad". No le asigna un grupo a los clientes que están aislados (ruido).
+o	Resultado: Fue mucho más útil para detectar anomalías o "Outliers". Identificó a esos pocos clientes mayoristas (compras masivas de miles de unidades) que K-means simplemente arrastró a un grupo normal. DBSCAN separa el comportamiento "común" del comportamiento "extraordinario".
+________________________________________
+3. ¿Qué limitaciones encontraron y cómo las abordarían?
+Limitaciones Identificadas:
+1.	Escalabilidad y Outliers: En el análisis RFM, los clientes mayoristas (Monetary extremadamente alto) distorsionan la media de K-means, haciendo que el "codo" del método de selección de clusters no sea tan claro.
+2.	La "foto fija" del tiempo: El análisis RFM es estático; no muestra si un cliente está mejorando o empeorando su comportamiento, solo cómo está hoy.
+3.	Dificultad de t-SNE: Aunque t-SNE mostró grupos complejos, es computacionalmente costoso en datasets grandes y los ejes no tienen una interpretación directa.
+Cómo abordarlas:
+•	Transformación Logarítmica: Aplicaría una transformación logarítmica a las variables RFM antes del escalado para comprimir los valores extremos (outliers) y que K-means trabaje con grupos más homogéneos.
+•	Análisis RFM Evolutivo: Implementaría un análisis comparativo entre dos periodos de tiempo (ej. Q1 vs Q2) para detectar el "Churn" (abandono) de forma predictiva.
+•	Uso de PCA como entrada: Utilizaría los componentes de PCA como entrada para t-SNE para acelerar el procesamiento y mejorar la separación visual de los agrupamientos complejos.
+Resumen Técnico
+Mientras que K-means te da la estructura para la estrategia comercial, PCA y t-SNE te dan la validación visual de que esos grupos realmente existen y no son ruido estadístico. La tabla RFM es el motor que permite que los números tengan un sentido de negocio
+
