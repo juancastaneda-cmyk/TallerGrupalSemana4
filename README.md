@@ -7,7 +7,9 @@
 
 Este proyecto implementa técnicas de **Aprendizaje Automático No Supervisado** para segmentar clientes utilizando el dataset **Online Retail** de Kaggle.
 
-El objetivo principal es identificar grupos de clientes con comportamientos de compra similares mediante técnicas de *clustering*, con el fin de apoyar estrategias de marketing, retención y análisis comercial.
+## 🎯 Objetivo del Proyecto
+
+El objetivo principal del proyecto es identificar y caracterizar segmentos de clientes con comportamientos de compra similares mediante técnicas de clustering no supervisado, con el fin de generar información útil para la toma de decisiones comerciales.
 
 ### 🔍 Modelos aplicados
 
