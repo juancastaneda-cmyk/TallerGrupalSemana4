@@ -146,7 +146,7 @@ El repositorio se organiza de la siguiente manera:
   - Resultados de clustering con K-means y DBSCAN
   - Visualizaciones PCA y t-SNE
   - Archivos CSV con el perfil promedio de cada cluster
-- `notebooks/`: Contiene los notebooks Jupyter con el desarrollo completo del análisis, incluyendo limpieza de datos, ingeniería de características, clustering y visualización.
+- `notebooks/`: Contiene el notebook Jupyter con el desarrollo completo del análisis, incluyendo limpieza de datos, ingeniería de características, clustering y visualización.
 - `README.md`: Documento descriptivo del proyecto.
 - `preguntasrespuestas.docx`: Documento con las respuestas solicitadas en la actividad académica.
 - `requirements.txt`: Lista de dependencias necesarias para reproducir el proyecto.
