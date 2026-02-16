@@ -137,21 +137,19 @@ Esto facilita la interpretación estratégica de cada segmento.
 
 ## 📁 Estructura del Proyecto
 
-Proyecto/
-│
-├── OnlineRetail.zip
-├── segmentacion_clientes.ipynb
-└── figures/
-├── distribucion_rfm.png
-├── matriz_correlacion_rfm.png
-├── elbow_kmeans.png
-├── silhouette_kmeans.png
-├── pca_kmeans.png
-├── pca_dbscan.png
-├── tsne_kmeans.png
-├── tsne_dbscan.png
-├── perfiles_cluster_kmeans.csv
-└── perfiles_cluster_dbscan.csv
+El repositorio se organiza de la siguiente manera:
+
+- `data/`: Contiene el dataset original utilizado en el proyecto (Online Retail), almacenado en formato comprimido debido a su tamaño.
+- `figures/`: Incluye las visualizaciones generadas durante el análisis, tales como:
+  - Gráficos de distribución y correlación de variables RFM
+  - Gráficos de selección del número óptimo de clusters (Elbow y Silhouette)
+  - Resultados de clustering con K-means y DBSCAN
+  - Visualizaciones PCA y t-SNE
+  - Archivos CSV con el perfil promedio de cada cluster
+- `notebooks/`: Contiene los notebooks Jupyter con el desarrollo completo del análisis, incluyendo limpieza de datos, ingeniería de características, clustering y visualización.
+- `README.md`: Documento descriptivo del proyecto.
+- `preguntasrespuestas.docx`: Documento con las respuestas solicitadas en la actividad académica.
+- `requirements.txt`: Lista de dependencias necesarias para reproducir el proyecto.
 
 ---
 
