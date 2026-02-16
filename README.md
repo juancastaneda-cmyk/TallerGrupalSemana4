@@ -124,6 +124,13 @@ Se generaron archivos CSV con el promedio de:
 
 Esto facilita la interpretación estratégica de cada segmento.
 
+## 📊 Principales Hallazgos
+
+- K-means permitió identificar cuatro perfiles de clientes con comportamientos claramente diferenciados en términos de recencia, frecuencia y gasto.
+- DBSCAN identificó un único grupo denso y un conjunto de clientes atípicos, siendo más útil para la detección de outliers que para una segmentación fina.
+- Las visualizaciones mediante PCA y t-SNE confirmaron la separación de los clusters obtenidos con K-means.
+- Los clientes de alto valor representan un grupo reducido, pero con un impacto significativo en el valor monetario total.
+
 ---
 
 ## 📁 Estructura del Proyecto
