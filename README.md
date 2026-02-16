@@ -124,6 +124,8 @@ Se generaron archivos CSV con el promedio de:
 
 Esto facilita la interpretación estratégica de cada segmento.
 
+---
+
 ## 📊 Principales Hallazgos
 
 - K-means permitió identificar cuatro perfiles de clientes con comportamientos claramente diferenciados en términos de recencia, frecuencia y gasto.
