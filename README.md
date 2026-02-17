@@ -155,11 +155,13 @@ El repositorio se organiza de la siguiente manera:
 
 ## 🛠 Requisitos Técnicos
 
-- Python 3.9+
+- Python 3.9 o superior
+
 Instalar dependencias:
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
 ---
 
