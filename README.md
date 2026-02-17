@@ -156,7 +156,14 @@ El repositorio se organiza de la siguiente manera:
 ## 🛠 Requisitos Técnicos
 
 - Python 3.9+
-- ## 🎥 Video de presentación del proyecto
+Instalar dependencias:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+---
+
+## 🎥 Video de presentación del proyecto
 
 En este video se presenta una explicación técnica del proyecto, donde se abordan:
 
@@ -166,10 +173,4 @@ En este video se presenta una explicación técnica del proyecto, donde se abord
 - Las conclusiones y recomendaciones del estudio
 
 👉 *Enlace al video:*  
-
-Instalar dependencias:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-
-
+🔗 https://TU_ENLACE_AQUI
