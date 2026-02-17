@@ -148,7 +148,7 @@ El repositorio se organiza de la siguiente manera:
   - Archivos CSV con el perfil promedio de cada cluster
 - `notebooks/`: Contiene el notebook Jupyter con el desarrollo completo del análisis, incluyendo limpieza de datos, ingeniería de características, clustering y visualización.
 - `README.md`: Documento descriptivo del proyecto.
-- `preguntasrespuestas.docx`: Documento con las respuestas solicitadas en la actividad académica.
+- `Reflexion_y_Comunicacion_Preguntas_y_Respuestas.pdf`: Documento con las respuestas solicitadas en la actividad académica.
 - `requirements.txt`: Lista de dependencias necesarias para reproducir el proyecto.
 
 ---
