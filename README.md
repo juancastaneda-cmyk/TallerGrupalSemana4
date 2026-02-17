@@ -172,5 +172,5 @@ En este video se presenta una explicación técnica del proyecto, donde se abord
 - El análisis comparativo entre modelos
 - Las conclusiones y recomendaciones del estudio
 
-👉 *Enlace al video:*  
+👉 **Enlace al video:**  
 🔗 https://TU_ENLACE_AQUI
