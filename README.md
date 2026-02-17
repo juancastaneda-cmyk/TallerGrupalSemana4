@@ -156,6 +156,16 @@ El repositorio se organiza de la siguiente manera:
 ## 🛠 Requisitos Técnicos
 
 - Python 3.9+
+- ## 🎥 Video de presentación del proyecto
+
+En este video se presenta una explicación técnica del proyecto, donde se abordan:
+
+- El problema analizado
+- La metodología y técnicas aplicadas
+- El análisis comparativo entre modelos
+- Las conclusiones y recomendaciones del estudio
+
+👉 *Enlace al video:*  
 
 Instalar dependencias:
 
