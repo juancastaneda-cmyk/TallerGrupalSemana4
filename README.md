@@ -133,6 +133,13 @@ Esto facilita la interpretación estratégica de cada segmento.
 - Las visualizaciones mediante PCA y t-SNE confirmaron la separación de los clusters obtenidos con K-means.
 - Los clientes de alto valor representan un grupo reducido, pero con un impacto significativo en el valor monetario total.
 
+## 🧠 Reflexión y comunicación
+
+Como parte del análisis final del proyecto, se desarrolló un documento de reflexión donde se responden las preguntas orientadoras de la actividad, abordando la interpretación de los resultados, la comparación entre modelos y las limitaciones identificadas.
+
+📄 **Documento:**  
+[Reflexión y comunicación – Preguntas y Respuestas](Reflexion_y_comunicacion_Preguntas_y_Respuestas.pdf)
+
 ---
 
 ## 📁 Estructura del Proyecto
